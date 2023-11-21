@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "1b7e67a9-7ca7-488c-8334-40b1e675608a",
+		"name": "TP4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17259760"
+	},
+	"item": [
+		{
+			"name": "get all Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/items",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "startAdventure",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ridha\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ridha\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inventory (secured)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjpudWxsLCJpZCI6IjYzN2U4YWJkNjhhNzUyZmE3NDc1ZDAzNyIsImlhdCI6MTY2OTc2MzY5MX0.1ZGJrVWFldO6ZTl_1WXlEXjfq39jjR0gshnSPkctQns",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ridha\",\r\n    \"password\":\"123\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/items",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buy item (secured)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjpudWxsLCJpZCI6IjYzN2U4YWJkNjhhNzUyZmE3NDc1ZDAzNyIsImlhdCI6MTY2OTI0NjY1MH0.vKNYCGfzVDxjAUwYTeElmLheQJiIFulDY2UzavPsrvE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/buy/637e4356453b8396bdbaaa62",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"buy",
+						"637e4356453b8396bdbaaa62"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
